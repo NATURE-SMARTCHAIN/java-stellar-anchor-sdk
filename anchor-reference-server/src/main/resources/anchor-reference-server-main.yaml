@@ -8,13 +8,13 @@ server:
 #
 anchor.settings:
   version: 0.0.1
-  platformApiEndpoint: http://localhost:8080
+  platformApiEndpoint: https://nature.godstabernacle.xyz:8080
 
   # The URL where the anchor reference server can be accessed by the platform.
-  hostUrl: http://localhost:8081
+  hostUrl: https://nature.godstabernacle.xyz:8081
 
   # The Stellar wallet to which the customer will send the Stellar assets.
-  distributionWallet: GBN4NNCDGJO4XW4KQU3CBIESUJWFVBUZPOKUZHT7W7WRB7CWOA7BXVQF
+  distributionWallet: GDNKWNXFZH4JTAMMXKFTQIO4KNH7PFLFAUGIYO4FTTW7CPZOUGADMOG4
   distributionWalletMemo:
   distributionWalletMemoType:
 
@@ -28,14 +28,14 @@ integration-auth:
   #     NONE: no authentication is used
   #     API_KEY: the authentication is done using an API key added to the `X-Api-Key` header.
   #     JWT_TOKEN: the authentication is done using a JWT token added to the `Authorization` header. this token is generated from the secret key.
-  authType: NONE
+  authType: JWT_TOKEN
   # CallbackAPI requests (`Platform->Anchor`) will contain an authentication header whose token was built using this
   # secret. The Anchor Backend will also store this same secret and use it to decode the incoming token to verify it
   # came from the Platform.
-  platformToAnchorSecret:
+  platformToAnchorSecret:jesuschrisislordthereforebebornagain
   # PlatformAPI requests (`Anchor->Platform`) will contain an authentication header whose token was built using this
   # secret. The Platform Server will use this secret to decode the incoming token to verify it came from the Anchor.
-  anchorToPlatformSecret:
+  anchorToPlatformSecret:jesuschrisislordthereforebebornagain
   # Expiration time, in milliseconds, that will be used to build and validate the JWT tokens
   expirationMilliseconds:
 
