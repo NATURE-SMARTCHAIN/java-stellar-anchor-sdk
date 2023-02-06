@@ -37,7 +37,7 @@ integration-auth:
   # secret. The Platform Server will use this secret to decode the incoming token to verify it came from the Anchor.
   anchorToPlatformSecret:jesuschrisislordthereforebebornagain
   # Expiration time, in milliseconds, that will be used to build and validate the JWT tokens
-  expirationMilliseconds:
+  expirationMilliseconds:100000
 
 event:
   # The listener type. values: [kafka, sqs, amqp]
@@ -48,10 +48,10 @@ event:
 
 # NOTE: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables need to be set if using AWS MSK
 kafka.listener:
-  bootstrapServer: localhost:29092
+  bootstrapServer: nature.godstabernacle.xyz:29092
   #bootstrapServer: b-1-public.democluster1.w7j4hi.c25.kafka.us-east-1.amazonaws.com:9198   # AWS MSK broker example
-  useSingleQueue: false
-  useIAM: false   # IAM authentication for AWS MSK
+  useSingleQueue: true
+  useIAM: true   # IAM authentication for AWS MSK
   eventTypeToQueue:
     all: ap_event_single_queue
     quoteCreated: ap_event_quote_created
@@ -98,9 +98,9 @@ spring.mvc.converters.preferred-json-mapper: gson
 # Spring Data JDBC settings for Postgres
 #
 #spring.jpa.database: POSTGRESQL
-#spring.jpa.show-sql: false
+#spring.jpa.show-sql: true
 #spring.datasource.driver-class-name: org.postgresql.Driver
 #spring.datasource.url: jdbc:postgresql://localhost:5432/anchorplatform
 #spring.datasource.username: anchorplatform
-#spring.datasource.password: <PASSWORD>
+#spring.datasource.password: Edenlife247
 #spring.mvc.converters.preferred-json-mapper: gson
