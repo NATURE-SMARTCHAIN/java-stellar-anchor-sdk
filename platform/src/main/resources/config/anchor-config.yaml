@@ -339,7 +339,7 @@ sep24:
   interactive_url:
     type: simple
     simple:
-      base_url: http://localhost:8080/sep24/interactive
+      base_url: https://nature.godstabernacle.xyz:8080/sep24/interactive
       txn_fields: status, kind, amount_in, amount_in_asset
 
   ## @param: more_info_url
@@ -356,7 +356,7 @@ sep24:
   more_info_url:
     type: simple
     simple:
-      base_url: http://localhost:8080/sep24/transaction/more_info
+      base_url: https://nature.godstabernacle.xyz:8080/sep24/transaction/more_info
       txn_fields: kind, amount_in, amount_in_asset
       jwt_expiration: 600
 
@@ -366,7 +366,7 @@ sep31:
   ## @type: bool
   ## Whether to enable SEP-31 for this instance of AP server.
   #
-  enabled: false
+  enabled: true
 
   ## @param: payment_type
   ## @default: STRICT_SEND
@@ -392,7 +392,7 @@ sep38:
   ## @type: bool
   ## Whether to enable SEP-38 for this instance of AP server.
   #
-  enabled: false
+  enabled: true
 
 
 ##########################
@@ -404,14 +404,14 @@ metrics:
   ## @type: bool
   ## If true, enable metrics endpoints for third-party services (ex: prometheus) to scrape
   #
-  enabled: false
+  enabled: true
 
   ## @param: extras_enabled
   ## @type: bool
   ## If true, enable extra metrics (these metrics periodically query the database to get the current state of the
   ## system)
   #
-  extras_enabled: false
+  extras_enabled: true
 
   ## @param: run_interval
   ## @type: integer
@@ -429,7 +429,7 @@ events:
   ## @type: bool
   ## Whether to enable events.
   #
-  enabled: false
+  enabled: true
 
   ## @param: event_type_to_queue
   ## @type: map
@@ -454,7 +454,7 @@ events:
       ## A comma-separated list of host:port pairs that are the addresses of one or more brokers in a Kafka cluster,
       ## e.g. localhost:9092 or localhost:9092,another.host:9092.
       #
-      bootstrap_server: localhost:29092
+      bootstrap_server: nature.godstabernacle.xyz:29092
       # The client ID. If left empty, it is randomly generated.
       client_id:
       # Determines how many times the producer will attempt to send a message before marking it as failed.
@@ -491,7 +491,7 @@ events:
       ## If true, please follow the `Set up AWS Credentials and Region for Development`
       ## at https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
       #
-      use_IAM: false
+      use_IAM: true
 
       ## @param: bootstrap_server
       ## @type: string
