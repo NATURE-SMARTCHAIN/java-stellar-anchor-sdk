@@ -169,7 +169,7 @@ event_processor:
   queue:
     type: kafka
     kafka:
-      bootstrap_server: localhost:29092
+      bootstrap_server: nature.godstabernacle.xyz:29092
       event_type_to_topic:
         all: dev_ap_event_single_queue
         quote_created: ap_event_quote_created
