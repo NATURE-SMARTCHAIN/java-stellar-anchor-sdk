@@ -1,26 +1,26 @@
 ACCOUNTS = []
 VERSION = "0.1.0"
 NETWORK_PASSPHRASE = "Test SDF Network ; September 2015"
-SIGNING_KEY = "GCHLHDBOKG2JWMJQBTLSL5XG6NO7ESXI2TAQKZXCXWXB5WI2X6W233PR"
+SIGNING_KEY = "GCJIKEKFS5YQP6OE7E6AALGD53NKFOHO6G7TGSMAB4X264SIFDOIVHP5"
 
-WEB_AUTH_ENDPOINT = "http://localhost:8080/auth"
-KYC_SERVER = "http://localhost:8080/sep12"
-TRANSFER_SERVER_SEP0024 = "http://localhost:8080/sep24"
-DIRECT_PAYMENT_SERVER = "http://localhost:8080/sep31"
-ANCHOR_QUOTE_SERVER = "http://localhost:8080/sep38"
+WEB_AUTH_ENDPOINT = "https://nature.godstabernacle.xyz:8080/auth"
+KYC_SERVER = "https://nature.godstabernacle.xyz:8080/sep12"
+TRANSFER_SERVER_SEP0024 = "https://nature.godstabernacle.xyz:8080/sep24"
+DIRECT_PAYMENT_SERVER = "https://nature.godstabernacle.xyz:8080/sep31"
+ANCHOR_QUOTE_SERVER = "https://nature.godstabernacle.xyz:8080/sep38"
 
 [[CURRENCIES]]
-code = "USDC"
-issuer = "GDQOE23CFSUMSVQK4Y5JHPPYK73VYCNHZHA7ENKCV37P6SUEO6XQBKPP"
+code = "USDN"
+issuer = "GA3BJUBNOIHANBJEKZFSQTCRB5CUQ4GSENQHVC5QNZGGSK3ILAZS6ATK"
 status = "test"
 is_asset_anchored = true
 anchor_asset_type = "fiat"
-desc = "A test USDC issued by Stellar."
+desc = "A test USDN issued by Global Fund 4 Nature."
 
 [[CURRENCIES]]
-code = "JPYC"
-issuer = "GDQOE23CFSUMSVQK4Y5JHPPYK73VYCNHZHA7ENKCV37P6SUEO6XQBKPP"
+code = "NGNN"
+issuer = "GA3BJUBNOIHANBJEKZFSQTCRB5CUQ4GSENQHVC5QNZGGSK3ILAZS6ATK"
 status = "test"
 is_asset_anchored = true
 anchor_asset_type = "fiat"
-desc = "A test JPYC issued by Stellar."
+desc = "A test JPYC issued by Global Fund 4 Nature."
