@@ -750,13 +750,13 @@ data:
   ## at https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
   #
   #
-  type: h2
+  type: postgres
 
   ## @param: url
   ## @type: string
   ## Location of the database
   #
-  url: jdbc:h2:mem:anchor-platform
+  url: /var/lib/postgresql/12/main:anchorplatform
 
 
   ## @param: initial_connection_pool_size
