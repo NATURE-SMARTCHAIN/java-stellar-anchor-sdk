@@ -8,13 +8,13 @@ server:
 #
 anchor.settings:
   version: 0.0.1
-  platformApiEndpoint: http://localhost:8080
+  platformApiEndpoint: https://nature.godstabernacle.xyz:8080
 
   # The URL where the anchor reference server can be accessed by the platform.
-  hostUrl: http://localhost:8081
+  hostUrl: https://nature.godstabernacle.xyz:8081
 
   # The Stellar wallet to which the customer will send the Stellar assets.
-  distributionWallet: GBN4NNCDGJO4XW4KQU3CBIESUJWFVBUZPOKUZHT7W7WRB7CWOA7BXVQF
+  distributionWallet: GAIXTJGANTERAERDZN72GJTAU4YYEFH2HZNKDDBWQKFY7W6LC4WLLVHV
   distributionWalletMemo:
   distributionWalletMemoType:
 
@@ -28,30 +28,30 @@ integration-auth:
   #     NONE: no authentication is used
   #     API_KEY: the authentication is done using an API key added to the `X-Api-Key` header.
   #     JWT_TOKEN: the authentication is done using a JWT token added to the `Authorization` header. this token is generated from the secret key.
-  authType: NONE
+  authType: JWT_TOKEN
   # CallbackAPI requests (`Platform->Anchor`) will contain an authentication header whose token was built using this
   # secret. The Anchor Backend will also store this same secret and use it to decode the incoming token to verify it
   # came from the Platform.
-  platformToAnchorSecret:
+  platformToAnchorSecret: jesuschrisislordthereforebebornagain
   # PlatformAPI requests (`Anchor->Platform`) will contain an authentication header whose token was built using this
   # secret. The Platform Server will use this secret to decode the incoming token to verify it came from the Anchor.
-  anchorToPlatformSecret:
+  anchorToPlatformSecret: jesuschrisislordthereforebebornagain
   # Expiration time, in milliseconds, that will be used to build and validate the JWT tokens
-  expirationMilliseconds:
+  expirationMilliseconds: 30000
 
 event:
   # The listener type. values: [kafka, sqs, amqp]
   # If the listener is kafka, the kafka listener is configured in kafka.listener section.
   # If the listener is sqs, the sqs listener is configured in the sqs.listener section.
   # If the listener is amqp, the AMQP listener is configured in the ampq.listener section.
-  listenerType: kafka
+  listenerType: sqs
 
 # NOTE: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables need to be set if using AWS MSK
 kafka.listener:
-  bootstrapServer: localhost:29092
+  bootstrapServer: nature.godstabernacle.xyz:29092
   #bootstrapServer: b-1-public.democluster1.w7j4hi.c25.kafka.us-east-1.amazonaws.com:9198   # AWS MSK broker example
-  useSingleQueue: false
-  useIAM: false   # IAM authentication for AWS MSK
+  useSingleQueue: true
+  useIAM: true   # IAM authentication for AWS MSK
   eventTypeToQueue:
     all: ap_event_single_queue
     quoteCreated: ap_event_quote_created
@@ -61,7 +61,7 @@ kafka.listener:
 
 sqs.listener:
   region: us-east-1
-  useSingleQueue: false
+  useSingleQueue: true
   eventTypeToQueue:
     all: sdf_dev_ap_event_single_queue.fifo
     quote_created: sdf_dev_ap_event_quote_created.fifo
@@ -98,9 +98,9 @@ spring.mvc.converters.preferred-json-mapper: gson
 # Spring Data JDBC settings for Postgres
 #
 #spring.jpa.database: POSTGRESQL
-#spring.jpa.show-sql: false
+#spring.jpa.show-sql: true
 #spring.datasource.driver-class-name: org.postgresql.Driver
 #spring.datasource.url: jdbc:postgresql://localhost:5432/anchorplatform
-#spring.datasource.username: anchorplatform
-#spring.datasource.password: <PASSWORD>
+#spring.datasource.username: anchorplatformuser
+#spring.datasource.password: Edenlife247
 #spring.mvc.converters.preferred-json-mapper: gson
