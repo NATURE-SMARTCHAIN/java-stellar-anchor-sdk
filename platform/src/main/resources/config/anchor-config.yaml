@@ -213,7 +213,7 @@ sep1:
   ## @type: bool
   ## Whether to enable SEP-1 for this instance of AP server.
   #
-  enabled: false
+  enabled: true
 
   toml:
     ## @param: type
@@ -445,7 +445,7 @@ events:
   ## The type of queue to use for event publishing
   #
   publisher:
-    type: kafka
+    type: sqs
 
     ## If the value of `events.publisher.type` is "kafka", the `events.publisher.kafka` field must be defined.
     kafka:
@@ -491,7 +491,7 @@ events:
       ## If true, please follow the `Set up AWS Credentials and Region for Development`
       ## at https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
       #
-      use_IAM: true
+      use_IAM: false
 
       ## @param: bootstrap_server
       ## @type: string
