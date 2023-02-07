@@ -14,7 +14,7 @@ anchor.settings:
   hostUrl: https://nature.godstabernacle.xyz:8081
 
   # The Stellar wallet to which the customer will send the Stellar assets.
-  distributionWallet: GDNKWNXFZH4JTAMMXKFTQIO4KNH7PFLFAUGIYO4FTTW7CPZOUGADMOG4
+  distributionWallet: GAIXTJGANTERAERDZN72GJTAU4YYEFH2HZNKDDBWQKFY7W6LC4WLLVHV
   distributionWalletMemo:
   distributionWalletMemoType:
 
@@ -44,7 +44,7 @@ event:
   # If the listener is kafka, the kafka listener is configured in kafka.listener section.
   # If the listener is sqs, the sqs listener is configured in the sqs.listener section.
   # If the listener is amqp, the AMQP listener is configured in the ampq.listener section.
-  listenerType: kafka
+  listenerType: sqs
 
 # NOTE: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables need to be set if using AWS MSK
 kafka.listener:
@@ -61,7 +61,7 @@ kafka.listener:
 
 sqs.listener:
   region: us-east-1
-  useSingleQueue: false
+  useSingleQueue: true
   eventTypeToQueue:
     all: sdf_dev_ap_event_single_queue.fifo
     quote_created: sdf_dev_ap_event_quote_created.fifo
@@ -101,6 +101,6 @@ spring.mvc.converters.preferred-json-mapper: gson
 #spring.jpa.show-sql: true
 #spring.datasource.driver-class-name: org.postgresql.Driver
 #spring.datasource.url: jdbc:postgresql://localhost:5432/anchorplatform
-#spring.datasource.username: anchorplatform
+#spring.datasource.username: anchorplatformuser
 #spring.datasource.password: Edenlife247
 #spring.mvc.converters.preferred-json-mapper: gson
